@@ -47,3 +47,6 @@ $ sudo dmesg
 $ sudo dmesg | grep drm
 ```
 
+## Add the Display(s) to Sunshine
+To add the displays to sunshine just config the correct display ID, its not `HDMI-A-1` but `1` or `2`...
+
