@@ -1,5 +1,5 @@
 # VirtualDisplayLinux
-Short Guide on how to use empty ports on the iGPU or GPU to create virtual displays. Credit to https://discuss.kde.org/t/how-to-create-a-virtual-monitor-display/2725/5 vyacheslavl
+Short Guide on how to use empty ports on the iGPU or GPU to create virtual displays. Credit to [vyacheslavl's post](https://discuss.kde.org/t/how-to-create-a-virtual-monitor-display/2725/5) and [Arch Linux Wiki](https://wiki.archlinux.org/title/Kernel_mode_setting#Forcing_modes_and_EDID)
 
 ## Identify video-cards and ports
 ```
@@ -12,13 +12,13 @@ $ cat /sys/class/drm/card1-HDMI-A-1/edid
 ```
 Checking this is pretty useful while debugging.
 
-# Create EDID folder
+## Create EDID folder
 Create a folder, if it is not existing in `/usr/lib/firmware/edid`
 ```
 $ sudo mkdir /usr/lib/firmware/edid
 ```
 
-# Create EDID files
+## Create EDID files
 The EDID files can be downloaded or extracted from the monitor(s) in use.
 Extract EDID file:
 ```
@@ -26,7 +26,7 @@ $ sudo get-edid > /usr/lib/firmware/custom_edid.bin
 ```
 Or [download/generate](https://github.com/akatrevorjay/edid-generator) a EDID file.
 
-# Edid kernel arguments to load EDID files at boot
+## Edid kernel arguments to load EDID files at boot
 On Ubuntu edit `/etc/default/grub`:
 ```
 ...
